@@ -1,0 +1,164 @@
+/* Listen and Catch */
+
+.lc-stage {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+}
+
+.lc-controls {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  direction: ltr;
+}
+
+.lc-speaker {
+  width: 104px;
+  height: 104px;
+}
+
+.lc-speaker .icon,
+.lc-speaker .icon svg {
+  width: 56px;
+  height: 56px;
+}
+
+.lc-turtle img {
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
+}
+
+.lc-grid {
+  --cols: 2;
+  --rows: 2;
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: 12px;
+  align-content: center;
+  width: 100%;
+  /* Square tiles: as wide as the screen allows, but never taller than the space left. */
+  max-width: min(100%, calc((100dvh - 260px) * var(--cols) / var(--rows)));
+  min-height: 0;
+  margin: 0 auto;
+  direction: ltr;
+}
+
+.lc-grid[data-count="3"] {
+  --cols: 3;
+  --rows: 1;
+  max-width: min(100%, 720px);
+}
+
+.lc-grid[data-count="6"] {
+  --cols: 2;
+  --rows: 3;
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+  .lc-grid[data-count="6"] {
+    --cols: 3;
+    --rows: 2;
+  }
+}
+
+.lc-option {
+  display: grid;
+  place-items: center;
+  min-width: var(--tap);
+  min-height: var(--tap);
+  aspect-ratio: 1;
+  padding: 9%;
+  border: var(--line);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  touch-action: none;
+  transition: transform 0.2s, opacity 0.35s, background-color 0.2s;
+}
+
+.lc-picture,
+.lc-outline {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* A dark edge around the shape, so yellow shows on the light tile. */
+.lc-outline {
+  filter: drop-shadow(2px 0 0 var(--ink)) drop-shadow(-2px 0 0 var(--ink)) drop-shadow(0 2px 0 var(--ink)) drop-shadow(0 -2px 0 var(--ink));
+}
+
+/* The shape file is used as a stencil: the colour and the size come from here. */
+.lc-shape {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--colour);
+  -webkit-mask: var(--shape) center / calc(var(--scale) * 100%) no-repeat;
+  mask: var(--shape) center / calc(var(--scale) * 100%) no-repeat;
+}
+
+/* A wrong picture fades out and keeps its place, so the others do not jump. */
+.lc-option.is-gone {
+  box-shadow: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lc-option.is-correct {
+  z-index: 2;
+  background: var(--leaf);
+  transform: scale(1.1);
+}
+
+.lc-option.is-glow {
+  animation: glow 0.9s ease-in-out infinite alternate;
+}
+
+/* A phone on its side: the buttons sit beside the pictures instead of above them. */
+@media (orientation: landscape) and (max-height: 520px) {
+  .lc-stage {
+    flex-direction: row;
+    align-items: center;
+    direction: ltr;
+  }
+
+  .lc-controls {
+    flex: 0 0 120px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .lc-speaker {
+    width: 88px;
+    height: 88px;
+  }
+
+  .lc-grid {
+    max-width: min(100%, calc((100dvh - 124px) * var(--cols) / var(--rows)));
+  }
+
+  .lc-grid[data-count="3"] {
+    max-width: min(100%, calc((100dvh - 124px) * 3));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lc-option {
+    transition: none;
+  }
+
+  .lc-option.is-glow {
+    animation: none;
+    background: var(--sand);
+    box-shadow: var(--shadow), 0 0 0 8px var(--sun);
+  }
+}

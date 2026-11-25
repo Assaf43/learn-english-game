@@ -217,7 +217,11 @@ Same source, commit and licence as the word pictures. Copied without changes and
 
 Made for this project; no outside source.
 
+- The 12 shapes of Listen and Catch, drawn by hand as one path each: `public/img/shapes/`
+  (`ball`, `star`, `book`, `car`, `hat`, `cup`, `fish`, `apple`, `heart`, `key`, `bell`, `shoe`).
+  They carry no colour of their own; the game colours and scales them in CSS.
 - The island scene behind the games area: inline SVG in `src/screens/home.ts`.
+- The speaker and home icons: inline SVG in `src/app/game-ui.ts`.
 - Stars and other shapes in the interface: text characters and CSS in `src/styles/`.
 
 ## Fonts

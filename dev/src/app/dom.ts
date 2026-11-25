@@ -32,3 +32,11 @@ export const AVATARS: readonly string[] = ['1', '2', '3', '4', '5', '6', '7', '8
 export function avatarUrl(avatar: string): string {
   return assetUrl(`img/avatars/${AVATARS.includes(avatar) ? avatar : AVATARS[0]}.svg`);
 }
+
+/** Starts loading pictures before they are shown, so they do not pop in a moment after their tile. */
+export function preloadImages(urls: Iterable<string>): void {
+  for (const url of new Set(urls)) {
+    const image = new Image();
+    image.src = url;
+  }
+}

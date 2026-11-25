@@ -1,6 +1,6 @@
 import type { AppContext, Screen } from '../../app/context';
 import { COPY } from '../../app/copy';
-import { assetUrl, el } from '../../app/dom';
+import { assetUrl, el, preloadImages } from '../../app/dom';
 import { choicePills, gameBar, onTap, speakerButton, startScreen } from '../../app/game-ui';
 import { defaultDifficulty } from '../../app/router';
 import { ProgressStore, pickRoundWords } from '../../core/progress';
@@ -40,6 +40,12 @@ export function wordObjectScreen(ctx: AppContext): Screen {
       candidates: pool, level, count: ROUND_SIZE,
       progress: progress.all(), roundNumber: progress.roundNumber(), rng: ctx.rng,
     });
+    const forward = mode === 'word-to-picture';
+    // Options are chosen for the whole round up front, so their pictures can load before they are needed.
+    const optionsFor = new Map(
+      roundWords.map(word => [word.id, buildOptions(word, pool, forward ? cfg : reverseConfig(difficulty), ctx.rng)]),
+    );
+    preloadImages([...optionsFor.values()].flat().map(option => assetUrl(option.image)));
     const tracker = new RoundTracker(roundWords.map(w => w.id));
     const bar = gameBar(() => ctx.navigate({ name: 'home' }));
     const stage = el('div', { class: 'wo-stage' });
@@ -57,8 +63,7 @@ export function wordObjectScreen(ctx: AppContext): Screen {
         finish();
         return;
       }
-      const forward = mode === 'word-to-picture';
-      const options = buildOptions(target, pool, forward ? cfg : reverseConfig(difficulty), ctx.rng);
+      const options = optionsFor.get(target.id) ?? [target];
       const taps = new ItemTaps(target.id, options.map(o => o.id));
       const buttons = new Map<string, HTMLButtonElement>();
       bar.update(tracker.position());

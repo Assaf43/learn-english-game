@@ -1,6 +1,7 @@
 import './styles/base.css';
 import './styles/game.css';
 import './styles/word-object.css';
+import './styles/listen-catch.css';
 import type { AppContext, Screen } from './app/context';
 import { COPY } from './app/copy';
 import { el } from './app/dom';
@@ -10,6 +11,7 @@ import { ProfileStore } from './core/profiles';
 import { mulberry32 } from './core/rng';
 import { LocalStorageService } from './core/storage';
 import type { GameId } from './core/types';
+import { listenCatchScreen } from './games/listen-catch/screen';
 import { wordObjectScreen } from './games/word-object/screen';
 import { homeScreen } from './screens/home';
 import { summaryScreen } from './screens/summary';
@@ -39,7 +41,9 @@ function screenFor(route: Route, ctx: AppContext): Screen {
     case 'home':
       return homeScreen(ctx);
     case 'game':
-      return route.game === 'word-object' ? wordObjectScreen(ctx) : gameNotReadyScreen(ctx, route.game);
+      if (route.game === 'word-object') return wordObjectScreen(ctx);
+      if (route.game === 'listen-catch') return listenCatchScreen(ctx);
+      return gameNotReadyScreen(ctx, route.game);
     case 'summary':
       return summaryScreen(ctx, route.result);
   }

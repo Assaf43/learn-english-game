@@ -1,0 +1,1742 @@
+[
+  {
+    "id": "cat",
+    "en": "cat",
+    "he": "חתול",
+    "image": "img/words/cat.svg",
+    "audio": "audio/cat.mp3",
+    "category": "animals",
+    "level": 1
+  },
+  {
+    "id": "dog",
+    "en": "dog",
+    "he": "כלב",
+    "image": "img/words/dog.svg",
+    "audio": "audio/dog.mp3",
+    "category": "animals",
+    "level": 1,
+    "trap": "mirror-letter"
+  },
+  {
+    "id": "fish",
+    "en": "fish",
+    "he": "דג",
+    "image": "img/words/fish.svg",
+    "audio": "audio/fish.mp3",
+    "category": "animals",
+    "level": 1,
+    "trap": "digraph"
+  },
+  {
+    "id": "bird",
+    "en": "bird",
+    "he": "ציפור",
+    "image": "img/words/bird.svg",
+    "audio": "audio/bird.mp3",
+    "category": "animals",
+    "level": 1,
+    "trap": "mirror-letter"
+  },
+  {
+    "id": "cow",
+    "en": "cow",
+    "he": "פרה",
+    "image": "img/words/cow.svg",
+    "audio": "audio/cow.mp3",
+    "category": "animals",
+    "level": 1,
+    "trap": "vowel"
+  },
+  {
+    "id": "pig",
+    "en": "pig",
+    "he": "חזיר",
+    "image": "img/words/pig.svg",
+    "audio": "audio/pig.mp3",
+    "category": "animals",
+    "level": 1,
+    "trap": "mirror-letter"
+  },
+  {
+    "id": "duck",
+    "en": "duck",
+    "he": "ברווז",
+    "image": "img/words/duck.svg",
+    "audio": "audio/duck.mp3",
+    "category": "animals",
+    "level": 1,
+    "trap": "digraph"
+  },
+  {
+    "id": "bee",
+    "en": "bee",
+    "he": "דבורה",
+    "image": "img/words/bee.svg",
+    "audio": "audio/bee.mp3",
+    "category": "animals",
+    "level": 1,
+    "trap": "double-letter"
+  },
+  {
+    "id": "frog",
+    "en": "frog",
+    "he": "צפרדע",
+    "image": "img/words/frog.svg",
+    "audio": "audio/frog.mp3",
+    "category": "animals",
+    "level": 1
+  },
+  {
+    "id": "horse",
+    "en": "horse",
+    "he": "סוס",
+    "image": "img/words/horse.svg",
+    "audio": "audio/horse.mp3",
+    "category": "animals",
+    "level": 2
+  },
+  {
+    "id": "lion",
+    "en": "lion",
+    "he": "אריה",
+    "image": "img/words/lion.svg",
+    "audio": "audio/lion.mp3",
+    "category": "animals",
+    "level": 2,
+    "trap": "vowel"
+  },
+  {
+    "id": "bear",
+    "en": "bear",
+    "he": "דוב",
+    "image": "img/words/bear.svg",
+    "audio": "audio/bear.mp3",
+    "category": "animals",
+    "level": 2,
+    "trap": "vowel"
+  },
+  {
+    "id": "sheep",
+    "en": "sheep",
+    "he": "כבשה",
+    "image": "img/words/sheep.svg",
+    "audio": "audio/sheep.mp3",
+    "category": "animals",
+    "level": 2,
+    "trap": "double-letter"
+  },
+  {
+    "id": "mouse",
+    "en": "mouse",
+    "he": "עכבר",
+    "image": "img/words/mouse.svg",
+    "audio": "audio/mouse.mp3",
+    "category": "animals",
+    "level": 2,
+    "trap": "vowel",
+    "confusableWith": [
+      "rat"
+    ]
+  },
+  {
+    "id": "rabbit",
+    "en": "rabbit",
+    "he": "ארנב",
+    "image": "img/words/rabbit.svg",
+    "audio": "audio/rabbit.mp3",
+    "category": "animals",
+    "level": 2,
+    "trap": "double-letter"
+  },
+  {
+    "id": "snake",
+    "en": "snake",
+    "he": "נחש",
+    "image": "img/words/snake.svg",
+    "audio": "audio/snake.mp3",
+    "category": "animals",
+    "level": 2,
+    "trap": "silent-e"
+  },
+  {
+    "id": "monkey",
+    "en": "monkey",
+    "he": "קוף",
+    "image": "img/words/monkey.svg",
+    "audio": "audio/monkey.mp3",
+    "category": "animals",
+    "level": 2
+  },
+  {
+    "id": "tiger",
+    "en": "tiger",
+    "he": "טיגריס",
+    "image": "img/words/tiger.svg",
+    "audio": "audio/tiger.mp3",
+    "category": "animals",
+    "level": 3
+  },
+  {
+    "id": "turtle",
+    "en": "turtle",
+    "he": "צב",
+    "image": "img/words/turtle.svg",
+    "audio": "audio/turtle.mp3",
+    "category": "animals",
+    "level": 3
+  },
+  {
+    "id": "zebra",
+    "en": "zebra",
+    "he": "זברה",
+    "image": "img/words/zebra.svg",
+    "audio": "audio/zebra.mp3",
+    "category": "animals",
+    "level": 3
+  },
+  {
+    "id": "whale",
+    "en": "whale",
+    "he": "לווייתן",
+    "image": "img/words/whale.svg",
+    "audio": "audio/whale.mp3",
+    "category": "animals",
+    "level": 3,
+    "trap": "silent-e",
+    "confusableWith": [
+      "dolphin"
+    ]
+  },
+  {
+    "id": "spider",
+    "en": "spider",
+    "he": "עכביש",
+    "image": "img/words/spider.svg",
+    "audio": "audio/spider.mp3",
+    "category": "animals",
+    "level": 3
+  },
+  {
+    "id": "rat",
+    "en": "rat",
+    "he": "חולדה",
+    "image": "img/words/rat.svg",
+    "audio": "audio/rat.mp3",
+    "category": "animals",
+    "level": 3,
+    "confusableWith": [
+      "mouse"
+    ]
+  },
+  {
+    "id": "elephant",
+    "en": "elephant",
+    "he": "פיל",
+    "image": "img/words/elephant.svg",
+    "audio": "audio/elephant.mp3",
+    "category": "animals",
+    "level": 4,
+    "trap": "digraph"
+  },
+  {
+    "id": "giraffe",
+    "en": "giraffe",
+    "he": "ג'ירפה",
+    "image": "img/words/giraffe.svg",
+    "audio": "audio/giraffe.mp3",
+    "category": "animals",
+    "level": 4,
+    "trap": "double-letter"
+  },
+  {
+    "id": "dolphin",
+    "en": "dolphin",
+    "he": "דולפין",
+    "image": "img/words/dolphin.svg",
+    "audio": "audio/dolphin.mp3",
+    "category": "animals",
+    "level": 4,
+    "trap": "digraph",
+    "confusableWith": [
+      "whale"
+    ]
+  },
+  {
+    "id": "penguin",
+    "en": "penguin",
+    "he": "פינגווין",
+    "image": "img/words/penguin.svg",
+    "audio": "audio/penguin.mp3",
+    "category": "animals",
+    "level": 4
+  },
+  {
+    "id": "octopus",
+    "en": "octopus",
+    "he": "תמנון",
+    "image": "img/words/octopus.svg",
+    "audio": "audio/octopus.mp3",
+    "category": "animals",
+    "level": 4
+  },
+  {
+    "id": "kangaroo",
+    "en": "kangaroo",
+    "he": "קנגורו",
+    "image": "img/words/kangaroo.svg",
+    "audio": "audio/kangaroo.mp3",
+    "category": "animals",
+    "level": 4,
+    "trap": "double-letter"
+  },
+  {
+    "id": "squirrel",
+    "en": "squirrel",
+    "he": "סנאי",
+    "image": "img/words/squirrel.svg",
+    "audio": "audio/squirrel.mp3",
+    "category": "animals",
+    "level": 4,
+    "trap": "double-letter"
+  },
+  {
+    "id": "apple",
+    "en": "apple",
+    "he": "תפוח",
+    "image": "img/words/apple.svg",
+    "audio": "audio/apple.mp3",
+    "category": "food",
+    "level": 1,
+    "trap": "double-letter"
+  },
+  {
+    "id": "egg",
+    "en": "egg",
+    "he": "ביצה",
+    "image": "img/words/egg.svg",
+    "audio": "audio/egg.mp3",
+    "category": "food",
+    "level": 1,
+    "trap": "double-letter"
+  },
+  {
+    "id": "milk",
+    "en": "milk",
+    "he": "חלב",
+    "image": "img/words/milk.svg",
+    "audio": "audio/milk.mp3",
+    "category": "food",
+    "level": 1,
+    "confusableWith": [
+      "cup"
+    ]
+  },
+  {
+    "id": "cake",
+    "en": "cake",
+    "he": "עוגה",
+    "image": "img/words/cake.svg",
+    "audio": "audio/cake.mp3",
+    "category": "food",
+    "level": 1,
+    "trap": "silent-e"
+  },
+  {
+    "id": "pizza",
+    "en": "pizza",
+    "he": "פיצה",
+    "image": "img/words/pizza.svg",
+    "audio": "audio/pizza.mp3",
+    "category": "food",
+    "level": 1,
+    "trap": "double-letter"
+  },
+  {
+    "id": "banana",
+    "en": "banana",
+    "he": "בננה",
+    "image": "img/words/banana.svg",
+    "audio": "audio/banana.mp3",
+    "category": "food",
+    "level": 1
+  },
+  {
+    "id": "bread",
+    "en": "bread",
+    "he": "לחם",
+    "image": "img/words/bread.svg",
+    "audio": "audio/bread.mp3",
+    "category": "food",
+    "level": 1,
+    "trap": "vowel",
+    "confusableWith": [
+      "sandwich"
+    ]
+  },
+  {
+    "id": "rice",
+    "en": "rice",
+    "he": "אורז",
+    "image": "img/words/rice.svg",
+    "audio": "audio/rice.mp3",
+    "category": "food",
+    "level": 1,
+    "trap": "silent-e"
+  },
+  {
+    "id": "cheese",
+    "en": "cheese",
+    "he": "גבינה",
+    "image": "img/words/cheese.svg",
+    "audio": "audio/cheese.mp3",
+    "category": "food",
+    "level": 2,
+    "trap": "double-letter"
+  },
+  {
+    "id": "lemon",
+    "en": "lemon",
+    "he": "לימון",
+    "image": "img/words/lemon.svg",
+    "audio": "audio/lemon.mp3",
+    "category": "food",
+    "level": 2
+  },
+  {
+    "id": "orange",
+    "en": "orange",
+    "he": "תפוז",
+    "image": "img/words/orange.svg",
+    "audio": "audio/orange.mp3",
+    "category": "food",
+    "level": 2
+  },
+  {
+    "id": "tomato",
+    "en": "tomato",
+    "he": "עגבנייה",
+    "image": "img/words/tomato.svg",
+    "audio": "audio/tomato.mp3",
+    "category": "food",
+    "level": 2
+  },
+  {
+    "id": "carrot",
+    "en": "carrot",
+    "he": "גזר",
+    "image": "img/words/carrot.svg",
+    "audio": "audio/carrot.mp3",
+    "category": "food",
+    "level": 2,
+    "trap": "double-letter"
+  },
+  {
+    "id": "potato",
+    "en": "potato",
+    "he": "תפוח אדמה",
+    "image": "img/words/potato.svg",
+    "audio": "audio/potato.mp3",
+    "category": "food",
+    "level": 2
+  },
+  {
+    "id": "candy",
+    "en": "candy",
+    "he": "סוכרייה",
+    "image": "img/words/candy.svg",
+    "audio": "audio/candy.mp3",
+    "category": "food",
+    "level": 2
+  },
+  {
+    "id": "cookie",
+    "en": "cookie",
+    "he": "עוגייה",
+    "image": "img/words/cookie.svg",
+    "audio": "audio/cookie.mp3",
+    "category": "food",
+    "level": 2,
+    "trap": "double-letter"
+  },
+  {
+    "id": "grapes",
+    "en": "grapes",
+    "he": "ענבים",
+    "image": "img/words/grapes.svg",
+    "audio": "audio/grapes.mp3",
+    "category": "food",
+    "level": 3
+  },
+  {
+    "id": "cherry",
+    "en": "cherry",
+    "he": "דובדבן",
+    "image": "img/words/cherry.svg",
+    "audio": "audio/cherry.mp3",
+    "category": "food",
+    "level": 3,
+    "trap": "double-letter"
+  },
+  {
+    "id": "pepper",
+    "en": "pepper",
+    "he": "פלפל",
+    "image": "img/words/pepper.svg",
+    "audio": "audio/pepper.mp3",
+    "category": "food",
+    "level": 3,
+    "trap": "double-letter"
+  },
+  {
+    "id": "salad",
+    "en": "salad",
+    "he": "סלט",
+    "image": "img/words/salad.svg",
+    "audio": "audio/salad.mp3",
+    "category": "food",
+    "level": 3
+  },
+  {
+    "id": "mushroom",
+    "en": "mushroom",
+    "he": "פטרייה",
+    "image": "img/words/mushroom.svg",
+    "audio": "audio/mushroom.mp3",
+    "category": "food",
+    "level": 4,
+    "trap": "double-letter"
+  },
+  {
+    "id": "cucumber",
+    "en": "cucumber",
+    "he": "מלפפון",
+    "image": "img/words/cucumber.svg",
+    "audio": "audio/cucumber.mp3",
+    "category": "food",
+    "level": 4
+  },
+  {
+    "id": "sandwich",
+    "en": "sandwich",
+    "he": "כריך",
+    "image": "img/words/sandwich.svg",
+    "audio": "audio/sandwich.mp3",
+    "category": "food",
+    "level": 4,
+    "trap": "digraph",
+    "confusableWith": [
+      "bread"
+    ]
+  },
+  {
+    "id": "popcorn",
+    "en": "popcorn",
+    "he": "פופקורן",
+    "image": "img/words/popcorn.svg",
+    "audio": "audio/popcorn.mp3",
+    "category": "food",
+    "level": 4
+  },
+  {
+    "id": "broccoli",
+    "en": "broccoli",
+    "he": "ברוקולי",
+    "image": "img/words/broccoli.svg",
+    "audio": "audio/broccoli.mp3",
+    "category": "food",
+    "level": 4,
+    "trap": "double-letter"
+  },
+  {
+    "id": "avocado",
+    "en": "avocado",
+    "he": "אבוקדו",
+    "image": "img/words/avocado.svg",
+    "audio": "audio/avocado.mp3",
+    "category": "food",
+    "level": 4
+  },
+  {
+    "id": "bed",
+    "en": "bed",
+    "he": "מיטה",
+    "image": "img/words/bed.svg",
+    "audio": "audio/bed.mp3",
+    "category": "home",
+    "level": 1,
+    "trap": "mirror-letter"
+  },
+  {
+    "id": "door",
+    "en": "door",
+    "he": "דלת",
+    "image": "img/words/door.svg",
+    "audio": "audio/door.mp3",
+    "category": "home",
+    "level": 1,
+    "trap": "double-letter"
+  },
+  {
+    "id": "key",
+    "en": "key",
+    "he": "מפתח",
+    "image": "img/words/key.svg",
+    "audio": "audio/key.mp3",
+    "category": "home",
+    "level": 1
+  },
+  {
+    "id": "box",
+    "en": "box",
+    "he": "קופסה",
+    "image": "img/words/box.svg",
+    "audio": "audio/box.mp3",
+    "category": "home",
+    "level": 1
+  },
+  {
+    "id": "cup",
+    "en": "cup",
+    "he": "כוס",
+    "image": "img/words/cup.svg",
+    "audio": "audio/cup.mp3",
+    "category": "home",
+    "level": 1,
+    "confusableWith": [
+      "milk"
+    ]
+  },
+  {
+    "id": "ball",
+    "en": "ball",
+    "he": "כדור",
+    "image": "img/words/ball.svg",
+    "audio": "audio/ball.mp3",
+    "category": "home",
+    "level": 1,
+    "trap": "double-letter"
+  },
+  {
+    "id": "tree",
+    "en": "tree",
+    "he": "עץ",
+    "image": "img/words/tree.svg",
+    "audio": "audio/tree.mp3",
+    "category": "home",
+    "level": 1,
+    "trap": "double-letter"
+  },
+  {
+    "id": "house",
+    "en": "house",
+    "he": "בית",
+    "image": "img/words/house.svg",
+    "audio": "audio/house.mp3",
+    "category": "home",
+    "level": 1,
+    "trap": "vowel",
+    "confusableWith": [
+      "school"
+    ]
+  },
+  {
+    "id": "chair",
+    "en": "chair",
+    "he": "כיסא",
+    "image": "img/words/chair.svg",
+    "audio": "audio/chair.mp3",
+    "category": "home",
+    "level": 2,
+    "trap": "digraph",
+    "confusableWith": [
+      "sofa"
+    ]
+  },
+  {
+    "id": "clock",
+    "en": "clock",
+    "he": "שעון",
+    "image": "img/words/clock.svg",
+    "audio": "audio/clock.mp3",
+    "category": "home",
+    "level": 2,
+    "trap": "digraph"
+  },
+  {
+    "id": "window",
+    "en": "window",
+    "he": "חלון",
+    "image": "img/words/window.svg",
+    "audio": "audio/window.mp3",
+    "category": "home",
+    "level": 2
+  },
+  {
+    "id": "phone",
+    "en": "phone",
+    "he": "טלפון",
+    "image": "img/words/phone.svg",
+    "audio": "audio/phone.mp3",
+    "category": "home",
+    "level": 2,
+    "trap": "digraph"
+  },
+  {
+    "id": "gift",
+    "en": "gift",
+    "he": "מתנה",
+    "image": "img/words/gift.svg",
+    "audio": "audio/gift.mp3",
+    "category": "home",
+    "level": 2
+  },
+  {
+    "id": "spoon",
+    "en": "spoon",
+    "he": "כף",
+    "image": "img/words/spoon.svg",
+    "audio": "audio/spoon.mp3",
+    "category": "home",
+    "level": 2,
+    "trap": "double-letter",
+    "confusableWith": [
+      "bowl"
+    ]
+  },
+  {
+    "id": "flower",
+    "en": "flower",
+    "he": "פרח",
+    "image": "img/words/flower.svg",
+    "audio": "audio/flower.mp3",
+    "category": "home",
+    "level": 2
+  },
+  {
+    "id": "sofa",
+    "en": "sofa",
+    "he": "ספה",
+    "image": "img/words/sofa.svg",
+    "audio": "audio/sofa.mp3",
+    "category": "home",
+    "level": 3,
+    "confusableWith": [
+      "chair"
+    ]
+  },
+  {
+    "id": "mirror",
+    "en": "mirror",
+    "he": "מראה",
+    "image": "img/words/mirror.svg",
+    "audio": "audio/mirror.mp3",
+    "category": "home",
+    "level": 3,
+    "trap": "double-letter"
+  },
+  {
+    "id": "plate",
+    "en": "plate",
+    "he": "צלחת",
+    "image": "img/words/plate.svg",
+    "audio": "audio/plate.mp3",
+    "category": "home",
+    "level": 3,
+    "trap": "silent-e",
+    "confusableWith": [
+      "bowl"
+    ]
+  },
+  {
+    "id": "candle",
+    "en": "candle",
+    "he": "נר",
+    "image": "img/words/candle.svg",
+    "audio": "audio/candle.mp3",
+    "category": "home",
+    "level": 3
+  },
+  {
+    "id": "basket",
+    "en": "basket",
+    "he": "סל",
+    "image": "img/words/basket.svg",
+    "audio": "audio/basket.mp3",
+    "category": "home",
+    "level": 3
+  },
+  {
+    "id": "bowl",
+    "en": "bowl",
+    "he": "קערה",
+    "image": "img/words/bowl.svg",
+    "audio": "audio/bowl.mp3",
+    "category": "home",
+    "level": 3,
+    "trap": "vowel",
+    "confusableWith": [
+      "plate",
+      "spoon"
+    ]
+  },
+  {
+    "id": "camera",
+    "en": "camera",
+    "he": "מצלמה",
+    "image": "img/words/camera.svg",
+    "audio": "audio/camera.mp3",
+    "category": "home",
+    "level": 3
+  },
+  {
+    "id": "toilet",
+    "en": "toilet",
+    "he": "אסלה",
+    "image": "img/words/toilet.svg",
+    "audio": "audio/toilet.mp3",
+    "category": "home",
+    "level": 4,
+    "trap": "vowel"
+  },
+  {
+    "id": "shower",
+    "en": "shower",
+    "he": "מקלחת",
+    "image": "img/words/shower.svg",
+    "audio": "audio/shower.mp3",
+    "category": "home",
+    "level": 4,
+    "trap": "digraph"
+  },
+  {
+    "id": "balloon",
+    "en": "balloon",
+    "he": "בלון",
+    "image": "img/words/balloon.svg",
+    "audio": "audio/balloon.mp3",
+    "category": "home",
+    "level": 4,
+    "trap": "double-letter"
+  },
+  {
+    "id": "umbrella",
+    "en": "umbrella",
+    "he": "מטרייה",
+    "image": "img/words/umbrella.svg",
+    "audio": "audio/umbrella.mp3",
+    "category": "home",
+    "level": 4,
+    "trap": "double-letter"
+  },
+  {
+    "id": "teapot",
+    "en": "teapot",
+    "he": "קומקום",
+    "image": "img/words/teapot.svg",
+    "audio": "audio/teapot.mp3",
+    "category": "home",
+    "level": 4,
+    "trap": "vowel"
+  },
+  {
+    "id": "saw",
+    "en": "saw",
+    "he": "מסור",
+    "image": "img/words/saw.svg",
+    "audio": "audio/saw.mp3",
+    "category": "tools",
+    "level": 1
+  },
+  {
+    "id": "axe",
+    "en": "axe",
+    "he": "גרזן",
+    "image": "img/words/axe.svg",
+    "audio": "audio/axe.mp3",
+    "category": "tools",
+    "level": 1
+  },
+  {
+    "id": "lock",
+    "en": "lock",
+    "he": "מנעול",
+    "image": "img/words/lock.svg",
+    "audio": "audio/lock.mp3",
+    "category": "tools",
+    "level": 1,
+    "trap": "digraph"
+  },
+  {
+    "id": "hammer",
+    "en": "hammer",
+    "he": "פטיש",
+    "image": "img/words/hammer.svg",
+    "audio": "audio/hammer.mp3",
+    "category": "tools",
+    "level": 2,
+    "trap": "double-letter"
+  },
+  {
+    "id": "broom",
+    "en": "broom",
+    "he": "מטאטא",
+    "image": "img/words/broom.svg",
+    "audio": "audio/broom.mp3",
+    "category": "tools",
+    "level": 2,
+    "trap": "double-letter"
+  },
+  {
+    "id": "brush",
+    "en": "brush",
+    "he": "מכחול",
+    "image": "img/words/brush.svg",
+    "audio": "audio/brush.mp3",
+    "category": "tools",
+    "level": 2,
+    "trap": "digraph"
+  },
+  {
+    "id": "ladder",
+    "en": "ladder",
+    "he": "סולם",
+    "image": "img/words/ladder.svg",
+    "audio": "audio/ladder.mp3",
+    "category": "tools",
+    "level": 2,
+    "trap": "double-letter"
+  },
+  {
+    "id": "wrench",
+    "en": "wrench",
+    "he": "מפתח ברגים",
+    "image": "img/words/wrench.svg",
+    "audio": "audio/wrench.mp3",
+    "category": "tools",
+    "level": 3,
+    "trap": "digraph"
+  },
+  {
+    "id": "bucket",
+    "en": "bucket",
+    "he": "דלי",
+    "image": "img/words/bucket.svg",
+    "audio": "audio/bucket.mp3",
+    "category": "tools",
+    "level": 3,
+    "trap": "digraph"
+  },
+  {
+    "id": "magnet",
+    "en": "magnet",
+    "he": "מגנט",
+    "image": "img/words/magnet.svg",
+    "audio": "audio/magnet.mp3",
+    "category": "tools",
+    "level": 3
+  },
+  {
+    "id": "torch",
+    "en": "torch",
+    "he": "פנס",
+    "image": "img/words/torch.svg",
+    "audio": "audio/torch.mp3",
+    "category": "tools",
+    "level": 3,
+    "trap": "digraph"
+  },
+  {
+    "id": "battery",
+    "en": "battery",
+    "he": "סוללה",
+    "image": "img/words/battery.svg",
+    "audio": "audio/battery.mp3",
+    "category": "tools",
+    "level": 4,
+    "trap": "double-letter"
+  },
+  {
+    "id": "toolbox",
+    "en": "toolbox",
+    "he": "ארגז כלים",
+    "image": "img/words/toolbox.svg",
+    "audio": "audio/toolbox.mp3",
+    "category": "tools",
+    "level": 4,
+    "trap": "double-letter"
+  },
+  {
+    "id": "compass",
+    "en": "compass",
+    "he": "מצפן",
+    "image": "img/words/compass.svg",
+    "audio": "audio/compass.mp3",
+    "category": "tools",
+    "level": 4,
+    "trap": "double-letter"
+  },
+  {
+    "id": "needle",
+    "en": "needle",
+    "he": "מחט",
+    "image": "img/words/needle.svg",
+    "audio": "audio/needle.mp3",
+    "category": "tools",
+    "level": 4,
+    "trap": "double-letter",
+    "confusableWith": [
+      "thread"
+    ]
+  },
+  {
+    "id": "thread",
+    "en": "thread",
+    "he": "חוט",
+    "image": "img/words/thread.svg",
+    "audio": "audio/thread.mp3",
+    "category": "tools",
+    "level": 4,
+    "trap": "digraph",
+    "confusableWith": [
+      "needle"
+    ]
+  },
+  {
+    "id": "hat",
+    "en": "hat",
+    "he": "כובע",
+    "image": "img/words/hat.svg",
+    "audio": "audio/hat.mp3",
+    "category": "clothes",
+    "level": 1,
+    "confusableWith": [
+      "helmet"
+    ]
+  },
+  {
+    "id": "shoe",
+    "en": "shoe",
+    "he": "נעל",
+    "image": "img/words/shoe.svg",
+    "audio": "audio/shoe.mp3",
+    "category": "clothes",
+    "level": 1,
+    "trap": "digraph",
+    "confusableWith": [
+      "sneaker"
+    ]
+  },
+  {
+    "id": "bag",
+    "en": "bag",
+    "he": "תיק",
+    "image": "img/words/bag.svg",
+    "audio": "audio/bag.mp3",
+    "category": "clothes",
+    "level": 1,
+    "trap": "mirror-letter",
+    "confusableWith": [
+      "backpack"
+    ]
+  },
+  {
+    "id": "shirt",
+    "en": "shirt",
+    "he": "חולצה",
+    "image": "img/words/shirt.svg",
+    "audio": "audio/shirt.mp3",
+    "category": "clothes",
+    "level": 1,
+    "trap": "digraph"
+  },
+  {
+    "id": "dress",
+    "en": "dress",
+    "he": "שמלה",
+    "image": "img/words/dress.svg",
+    "audio": "audio/dress.mp3",
+    "category": "clothes",
+    "level": 1,
+    "trap": "double-letter"
+  },
+  {
+    "id": "socks",
+    "en": "socks",
+    "he": "גרביים",
+    "image": "img/words/socks.svg",
+    "audio": "audio/socks.mp3",
+    "category": "clothes",
+    "level": 1,
+    "trap": "digraph"
+  },
+  {
+    "id": "coat",
+    "en": "coat",
+    "he": "מעיל",
+    "image": "img/words/coat.svg",
+    "audio": "audio/coat.mp3",
+    "category": "clothes",
+    "level": 2,
+    "trap": "vowel"
+  },
+  {
+    "id": "boot",
+    "en": "boot",
+    "he": "מגף",
+    "image": "img/words/boot.svg",
+    "audio": "audio/boot.mp3",
+    "category": "clothes",
+    "level": 2,
+    "trap": "double-letter"
+  },
+  {
+    "id": "ring",
+    "en": "ring",
+    "he": "טבעת",
+    "image": "img/words/ring.svg",
+    "audio": "audio/ring.mp3",
+    "category": "clothes",
+    "level": 2
+  },
+  {
+    "id": "jeans",
+    "en": "jeans",
+    "he": "ג'ינס",
+    "image": "img/words/jeans.svg",
+    "audio": "audio/jeans.mp3",
+    "category": "clothes",
+    "level": 2,
+    "trap": "vowel"
+  },
+  {
+    "id": "scarf",
+    "en": "scarf",
+    "he": "צעיף",
+    "image": "img/words/scarf.svg",
+    "audio": "audio/scarf.mp3",
+    "category": "clothes",
+    "level": 2
+  },
+  {
+    "id": "crown",
+    "en": "crown",
+    "he": "כתר",
+    "image": "img/words/crown.svg",
+    "audio": "audio/crown.mp3",
+    "category": "clothes",
+    "level": 2
+  },
+  {
+    "id": "gloves",
+    "en": "gloves",
+    "he": "כפפות",
+    "image": "img/words/gloves.svg",
+    "audio": "audio/gloves.mp3",
+    "category": "clothes",
+    "level": 3
+  },
+  {
+    "id": "shorts",
+    "en": "shorts",
+    "he": "מכנסיים קצרים",
+    "image": "img/words/shorts.svg",
+    "audio": "audio/shorts.mp3",
+    "category": "clothes",
+    "level": 3,
+    "trap": "digraph"
+  },
+  {
+    "id": "glasses",
+    "en": "glasses",
+    "he": "משקפיים",
+    "image": "img/words/glasses.svg",
+    "audio": "audio/glasses.mp3",
+    "category": "clothes",
+    "level": 3,
+    "trap": "double-letter",
+    "confusableWith": [
+      "goggles"
+    ]
+  },
+  {
+    "id": "sandal",
+    "en": "sandal",
+    "he": "סנדל",
+    "image": "img/words/sandal.svg",
+    "audio": "audio/sandal.mp3",
+    "category": "clothes",
+    "level": 3
+  },
+  {
+    "id": "helmet",
+    "en": "helmet",
+    "he": "קסדה",
+    "image": "img/words/helmet.svg",
+    "audio": "audio/helmet.mp3",
+    "category": "clothes",
+    "level": 4,
+    "confusableWith": [
+      "hat"
+    ]
+  },
+  {
+    "id": "sneaker",
+    "en": "sneaker",
+    "he": "נעל ספורט",
+    "image": "img/words/sneaker.svg",
+    "audio": "audio/sneaker.mp3",
+    "category": "clothes",
+    "level": 4,
+    "trap": "vowel",
+    "confusableWith": [
+      "shoe"
+    ]
+  },
+  {
+    "id": "goggles",
+    "en": "goggles",
+    "he": "משקפי מגן",
+    "image": "img/words/goggles.svg",
+    "audio": "audio/goggles.mp3",
+    "category": "clothes",
+    "level": 4,
+    "trap": "double-letter",
+    "confusableWith": [
+      "glasses"
+    ]
+  },
+  {
+    "id": "eye",
+    "en": "eye",
+    "he": "עין",
+    "image": "img/words/eye.svg",
+    "audio": "audio/eye.mp3",
+    "category": "body",
+    "level": 1,
+    "trap": "vowel"
+  },
+  {
+    "id": "ear",
+    "en": "ear",
+    "he": "אוזן",
+    "image": "img/words/ear.svg",
+    "audio": "audio/ear.mp3",
+    "category": "body",
+    "level": 1,
+    "trap": "vowel"
+  },
+  {
+    "id": "nose",
+    "en": "nose",
+    "he": "אף",
+    "image": "img/words/nose.svg",
+    "audio": "audio/nose.mp3",
+    "category": "body",
+    "level": 1,
+    "trap": "silent-e"
+  },
+  {
+    "id": "leg",
+    "en": "leg",
+    "he": "רגל",
+    "image": "img/words/leg.svg",
+    "audio": "audio/leg.mp3",
+    "category": "body",
+    "level": 1,
+    "confusableWith": [
+      "foot"
+    ]
+  },
+  {
+    "id": "arm",
+    "en": "arm",
+    "he": "זרוע",
+    "image": "img/words/arm.svg",
+    "audio": "audio/arm.mp3",
+    "category": "body",
+    "level": 1
+  },
+  {
+    "id": "hand",
+    "en": "hand",
+    "he": "יד",
+    "image": "img/words/hand.svg",
+    "audio": "audio/hand.mp3",
+    "category": "body",
+    "level": 1,
+    "confusableWith": [
+      "finger",
+      "thumb"
+    ]
+  },
+  {
+    "id": "foot",
+    "en": "foot",
+    "he": "כף רגל",
+    "image": "img/words/foot.svg",
+    "audio": "audio/foot.mp3",
+    "category": "body",
+    "level": 1,
+    "trap": "double-letter",
+    "confusableWith": [
+      "leg"
+    ]
+  },
+  {
+    "id": "mouth",
+    "en": "mouth",
+    "he": "פה",
+    "image": "img/words/mouth.svg",
+    "audio": "audio/mouth.mp3",
+    "category": "body",
+    "level": 2,
+    "trap": "digraph",
+    "confusableWith": [
+      "tongue"
+    ]
+  },
+  {
+    "id": "tooth",
+    "en": "tooth",
+    "he": "שן",
+    "image": "img/words/tooth.svg",
+    "audio": "audio/tooth.mp3",
+    "category": "body",
+    "level": 2,
+    "trap": "double-letter"
+  },
+  {
+    "id": "heart",
+    "en": "heart",
+    "he": "לב",
+    "image": "img/words/heart.svg",
+    "audio": "audio/heart.mp3",
+    "category": "body",
+    "level": 2,
+    "trap": "vowel"
+  },
+  {
+    "id": "bone",
+    "en": "bone",
+    "he": "עצם",
+    "image": "img/words/bone.svg",
+    "audio": "audio/bone.mp3",
+    "category": "body",
+    "level": 2,
+    "trap": "silent-e"
+  },
+  {
+    "id": "finger",
+    "en": "finger",
+    "he": "אצבע",
+    "image": "img/words/finger.svg",
+    "audio": "audio/finger.mp3",
+    "category": "body",
+    "level": 3,
+    "confusableWith": [
+      "hand",
+      "thumb"
+    ]
+  },
+  {
+    "id": "thumb",
+    "en": "thumb",
+    "he": "אגודל",
+    "image": "img/words/thumb.svg",
+    "audio": "audio/thumb.mp3",
+    "category": "body",
+    "level": 3,
+    "trap": "digraph",
+    "confusableWith": [
+      "hand",
+      "finger"
+    ]
+  },
+  {
+    "id": "tongue",
+    "en": "tongue",
+    "he": "לשון",
+    "image": "img/words/tongue.svg",
+    "audio": "audio/tongue.mp3",
+    "category": "body",
+    "level": 3,
+    "trap": "vowel",
+    "confusableWith": [
+      "mouth"
+    ]
+  },
+  {
+    "id": "brain",
+    "en": "brain",
+    "he": "מוח",
+    "image": "img/words/brain.svg",
+    "audio": "audio/brain.mp3",
+    "category": "body",
+    "level": 3,
+    "trap": "vowel"
+  },
+  {
+    "id": "skull",
+    "en": "skull",
+    "he": "גולגולת",
+    "image": "img/words/skull.svg",
+    "audio": "audio/skull.mp3",
+    "category": "body",
+    "level": 4,
+    "trap": "double-letter"
+  },
+  {
+    "id": "lungs",
+    "en": "lungs",
+    "he": "ריאות",
+    "image": "img/words/lungs.svg",
+    "audio": "audio/lungs.mp3",
+    "category": "body",
+    "level": 4
+  },
+  {
+    "id": "book",
+    "en": "book",
+    "he": "ספר",
+    "image": "img/words/book.svg",
+    "audio": "audio/book.mp3",
+    "category": "school",
+    "level": 1,
+    "trap": "double-letter",
+    "confusableWith": [
+      "notebook"
+    ]
+  },
+  {
+    "id": "pen",
+    "en": "pen",
+    "he": "עט",
+    "image": "img/words/pen.svg",
+    "audio": "audio/pen.mp3",
+    "category": "school",
+    "level": 1,
+    "trap": "mirror-letter",
+    "confusableWith": [
+      "pencil"
+    ]
+  },
+  {
+    "id": "map",
+    "en": "map",
+    "he": "מפה",
+    "image": "img/words/map.svg",
+    "audio": "audio/map.mp3",
+    "category": "school",
+    "level": 1,
+    "trap": "mirror-letter"
+  },
+  {
+    "id": "pencil",
+    "en": "pencil",
+    "he": "עיפרון",
+    "image": "img/words/pencil.svg",
+    "audio": "audio/pencil.mp3",
+    "category": "school",
+    "level": 2,
+    "confusableWith": [
+      "pen",
+      "crayon"
+    ]
+  },
+  {
+    "id": "paper",
+    "en": "paper",
+    "he": "דף",
+    "image": "img/words/paper.svg",
+    "audio": "audio/paper.mp3",
+    "category": "school",
+    "level": 2,
+    "trap": "mirror-letter"
+  },
+  {
+    "id": "ruler",
+    "en": "ruler",
+    "he": "סרגל",
+    "image": "img/words/ruler.svg",
+    "audio": "audio/ruler.mp3",
+    "category": "school",
+    "level": 2
+  },
+  {
+    "id": "school",
+    "en": "school",
+    "he": "בית ספר",
+    "image": "img/words/school.svg",
+    "audio": "audio/school.mp3",
+    "category": "school",
+    "level": 2,
+    "trap": "digraph",
+    "confusableWith": [
+      "house"
+    ]
+  },
+  {
+    "id": "crayon",
+    "en": "crayon",
+    "he": "צבע שעווה",
+    "image": "img/words/crayon.svg",
+    "audio": "audio/crayon.mp3",
+    "category": "school",
+    "level": 3,
+    "trap": "vowel",
+    "confusableWith": [
+      "pencil"
+    ]
+  },
+  {
+    "id": "globe",
+    "en": "globe",
+    "he": "גלובוס",
+    "image": "img/words/globe.svg",
+    "audio": "audio/globe.mp3",
+    "category": "school",
+    "level": 3,
+    "trap": "silent-e"
+  },
+  {
+    "id": "laptop",
+    "en": "laptop",
+    "he": "מחשב נייד",
+    "image": "img/words/laptop.svg",
+    "audio": "audio/laptop.mp3",
+    "category": "school",
+    "level": 3,
+    "trap": "mirror-letter"
+  },
+  {
+    "id": "scissors",
+    "en": "scissors",
+    "he": "מספריים",
+    "image": "img/words/scissors.svg",
+    "audio": "audio/scissors.mp3",
+    "category": "school",
+    "level": 4,
+    "trap": "double-letter"
+  },
+  {
+    "id": "backpack",
+    "en": "backpack",
+    "he": "ילקוט",
+    "image": "img/words/backpack.svg",
+    "audio": "audio/backpack.mp3",
+    "category": "school",
+    "level": 4,
+    "trap": "digraph",
+    "confusableWith": [
+      "bag"
+    ]
+  },
+  {
+    "id": "notebook",
+    "en": "notebook",
+    "he": "מחברת",
+    "image": "img/words/notebook.svg",
+    "audio": "audio/notebook.mp3",
+    "category": "school",
+    "level": 4,
+    "trap": "double-letter",
+    "confusableWith": [
+      "book"
+    ]
+  },
+  {
+    "id": "calendar",
+    "en": "calendar",
+    "he": "לוח שנה",
+    "image": "img/words/calendar.svg",
+    "audio": "audio/calendar.mp3",
+    "category": "school",
+    "level": 4
+  },
+  {
+    "id": "keyboard",
+    "en": "keyboard",
+    "he": "מקלדת",
+    "image": "img/words/keyboard.svg",
+    "audio": "audio/keyboard.mp3",
+    "category": "school",
+    "level": 4,
+    "trap": "vowel"
+  },
+  {
+    "id": "trophy",
+    "en": "trophy",
+    "he": "גביע",
+    "image": "img/words/trophy.svg",
+    "audio": "audio/trophy.mp3",
+    "category": "school",
+    "level": 4,
+    "trap": "digraph"
+  },
+  {
+    "id": "car",
+    "en": "car",
+    "he": "מכונית",
+    "image": "img/words/car.svg",
+    "audio": "audio/car.mp3",
+    "category": "transport",
+    "level": 1
+  },
+  {
+    "id": "bus",
+    "en": "bus",
+    "he": "אוטובוס",
+    "image": "img/words/bus.svg",
+    "audio": "audio/bus.mp3",
+    "category": "transport",
+    "level": 1,
+    "trap": "mirror-letter"
+  },
+  {
+    "id": "bike",
+    "en": "bike",
+    "he": "אופניים",
+    "image": "img/words/bike.svg",
+    "audio": "audio/bike.mp3",
+    "category": "transport",
+    "level": 1,
+    "trap": "silent-e"
+  },
+  {
+    "id": "boat",
+    "en": "boat",
+    "he": "סירה",
+    "image": "img/words/boat.svg",
+    "audio": "audio/boat.mp3",
+    "category": "transport",
+    "level": 1,
+    "trap": "vowel",
+    "confusableWith": [
+      "canoe"
+    ]
+  },
+  {
+    "id": "ship",
+    "en": "ship",
+    "he": "אונייה",
+    "image": "img/words/ship.svg",
+    "audio": "audio/ship.mp3",
+    "category": "transport",
+    "level": 1,
+    "trap": "digraph",
+    "confusableWith": [
+      "ferry"
+    ]
+  },
+  {
+    "id": "train",
+    "en": "train",
+    "he": "רכבת",
+    "image": "img/words/train.svg",
+    "audio": "audio/train.mp3",
+    "category": "transport",
+    "level": 2,
+    "trap": "vowel",
+    "confusableWith": [
+      "tram"
+    ]
+  },
+  {
+    "id": "truck",
+    "en": "truck",
+    "he": "משאית",
+    "image": "img/words/truck.svg",
+    "audio": "audio/truck.mp3",
+    "category": "transport",
+    "level": 2,
+    "trap": "digraph"
+  },
+  {
+    "id": "plane",
+    "en": "plane",
+    "he": "מטוס",
+    "image": "img/words/plane.svg",
+    "audio": "audio/plane.mp3",
+    "category": "transport",
+    "level": 2,
+    "trap": "silent-e"
+  },
+  {
+    "id": "rocket",
+    "en": "rocket",
+    "he": "חללית",
+    "image": "img/words/rocket.svg",
+    "audio": "audio/rocket.mp3",
+    "category": "transport",
+    "level": 3,
+    "trap": "digraph"
+  },
+  {
+    "id": "tractor",
+    "en": "tractor",
+    "he": "טרקטור",
+    "image": "img/words/tractor.svg",
+    "audio": "audio/tractor.mp3",
+    "category": "transport",
+    "level": 3
+  },
+  {
+    "id": "scooter",
+    "en": "scooter",
+    "he": "קורקינט",
+    "image": "img/words/scooter.svg",
+    "audio": "audio/scooter.mp3",
+    "category": "transport",
+    "level": 3,
+    "trap": "double-letter"
+  },
+  {
+    "id": "canoe",
+    "en": "canoe",
+    "he": "קאנו",
+    "image": "img/words/canoe.svg",
+    "audio": "audio/canoe.mp3",
+    "category": "transport",
+    "level": 4,
+    "trap": "vowel",
+    "confusableWith": [
+      "boat"
+    ]
+  },
+  {
+    "id": "ferry",
+    "en": "ferry",
+    "he": "מעבורת",
+    "image": "img/words/ferry.svg",
+    "audio": "audio/ferry.mp3",
+    "category": "transport",
+    "level": 4,
+    "trap": "double-letter",
+    "confusableWith": [
+      "ship"
+    ]
+  },
+  {
+    "id": "suitcase",
+    "en": "suitcase",
+    "he": "מזוודה",
+    "image": "img/words/suitcase.svg",
+    "audio": "audio/suitcase.mp3",
+    "category": "transport",
+    "level": 4,
+    "trap": "vowel"
+  },
+  {
+    "id": "tram",
+    "en": "tram",
+    "he": "רכבת קלה",
+    "image": "img/words/tram.svg",
+    "audio": "audio/tram.mp3",
+    "category": "transport",
+    "level": 4,
+    "confusableWith": [
+      "train"
+    ]
+  }
+]

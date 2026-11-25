@@ -21,6 +21,18 @@ npm run preview    # serve dist/ locally to check the build
 
 `dist/` is a plain static site. Any static host can serve it.
 
+## The published game
+
+The game is online at https://assaf43.github.io/learn-english-game/.
+
+Every push to the `main` branch on GitHub runs the tests, builds the app and publishes
+it there within a minute or two (`.github/workflows/deploy.yml`). A failing test stops
+the publish, and the previous version stays online. Progress of each run is under the
+repository's "Actions" tab.
+
+The build for publishing uses a relative base (`npm run build -- --base=./`) so the site
+works from a sub-folder address.
+
 ## How the code is laid out
 
 | Folder | What is in it |

@@ -157,3 +157,13 @@ test('ItemTaps: a tap on something that is not an option is ignored', () => {
   expect(taps.tap('horse')).toBe('ignored');
   expect(taps.done()).toBe(false);
 });
+
+test('real word bank: look-alike pairs found in review are never offered together', () => {
+  const byId = (id: string): Word => WORDS.find(w => w.id === id)!;
+  for (const [a, b] of [['boat', 'ship'], ['pen', 'crayon']]) {
+    for (const seed of SEEDS) {
+      expect(ids(buildOptions(byId(a), WORDS, WO_CONFIG.hard, mulberry32(seed))), a).not.toContain(b);
+      expect(ids(buildOptions(byId(b), WORDS, WO_CONFIG.hard, mulberry32(seed))), b).not.toContain(a);
+    }
+  }
+});

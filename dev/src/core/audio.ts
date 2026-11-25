@@ -61,6 +61,8 @@ export class FileAudioPlayer implements AudioPlayer {
   /** Goes up with every `play`, so a stopped sound can tell it is no longer current. */
   private generation = 0;
   private finishCurrent: (() => void) | null = null;
+  /** The speech fallback is talking right now. */
+  private speaking = false;
 
   constructor(deps: { createAudio?: (src: string) => HTMLAudioElement; speech?: SpeechSynthesis | null; baseUrl?: string } = {}) {
     this.createAudio = deps.createAudio ?? (src => new Audio(src));
@@ -137,10 +139,15 @@ export class FileAudioPlayer implements AudioPlayer {
     } catch {
       // Nothing was playing.
     }
-    try {
-      this.speech?.cancel();
-    } catch {
-      // No speech support.
+    // Speech is cancelled only when the fallback is talking. Cancelling at other
+    // times would throw away the silent utterance that `unlock` uses on phones.
+    if (this.speaking) {
+      this.speaking = false;
+      try {
+        this.speech?.cancel();
+      } catch {
+        // No speech support.
+      }
     }
     this.finishCurrent?.();
   }
@@ -156,15 +163,20 @@ export class FileAudioPlayer implements AudioPlayer {
       done();
       return;
     }
+    const finished = (): void => {
+      this.speaking = false;
+      done();
+    };
     try {
       const u = utterance(text);
       u.lang = 'en-US';
       u.rate = rate;
-      u.onend = done;
-      u.onerror = done;
+      u.onend = finished;
+      u.onerror = finished;
+      this.speaking = true;
       this.speech.speak(u);
     } catch {
-      done();
+      finished();
     }
   }
 }

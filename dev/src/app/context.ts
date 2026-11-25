@@ -13,7 +13,7 @@ export interface AppContext {
   navigate(route: Route): void;
 }
 
-/** One full-page view. `unmount` must stop timers, animation loops and sounds the screen started. */
+/** One full-page view. `unmount` must stop the timers and animation loops the screen started. */
 export interface Screen {
   mount(root: HTMLElement): void | Promise<void>;
   unmount(): void;

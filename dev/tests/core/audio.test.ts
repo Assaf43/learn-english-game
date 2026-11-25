@@ -205,3 +205,22 @@ test('SilentAudioPlayer resolves at once and remembers what was asked', async ()
   await player.play('dog', 'dog');
   expect(player.played).toEqual([{ id: 'cat', text: 'cat', rate: 0.6 }, { id: 'dog', text: 'dog', rate: 1 }]);
 });
+
+test('starting a sound leaves speech alone unless the fallback is speaking', async () => {
+  const quiet = fakeSpeech(false);
+  const working = new FileAudioPlayer({ createAudio: audioFactory('ends').createAudio, speech: quiet.speech, baseUrl: '/' });
+  working.unlock();
+  await working.play('cat', 'cat');
+  await working.play('dog', 'dog');
+  // Cancelling here would throw away the silent utterance that unlocks speech on phones.
+  expect(quiet.cancels()).toBe(0);
+
+  const talking = fakeSpeech(false);
+  const failing = new FileAudioPlayer({ createAudio: audioFactory('errors').createAudio, speech: talking.speech, baseUrl: '/' });
+  void failing.play('cat', 'cat');
+  await Promise.resolve();
+  await Promise.resolve();
+  expect(talking.spoken.map(u => u.text)).toEqual(['cat']);
+  void failing.play('dog', 'dog');
+  expect(talking.cancels()).toBe(1);
+});

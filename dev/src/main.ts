@@ -49,5 +49,8 @@ if (root) {
   const router = createRouter(root, screenFor, ctx);
   ctx.navigate = route => router.navigate(route);
 
-  void ctx.profiles.current().then(profile => ctx.navigate({ name: profile ? 'home' : 'who' }));
+  // If reading the saved player fails for any reason, the app still opens, on "who is playing".
+  void ctx.profiles.current()
+    .catch(() => null)
+    .then(profile => ctx.navigate({ name: profile ? 'home' : 'who' }));
 }

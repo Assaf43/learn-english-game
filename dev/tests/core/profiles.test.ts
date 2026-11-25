@@ -1,4 +1,4 @@
-import { expect, test } from 'vitest';
+import { expect, test, vi } from 'vitest';
 import { InvalidProfileError, ProfileStore } from '../../src/core/profiles';
 import { MemoryStorageService } from '../../src/core/storage';
 
@@ -47,4 +47,42 @@ test('stored profiles that are not a list read as no profiles', async () => {
   expect(await store.list()).toEqual([]);
   const p = await store.add({ name: 'יובל', grade: 5, avatar: 'a1' });
   expect(await store.list()).toEqual([p]);
+});
+
+test('a profile gets an id where crypto.randomUUID is missing (a phone on plain http)', async () => {
+  const store = new ProfileStore(new MemoryStorageService());
+  try {
+    vi.stubGlobal('crypto', {
+      getRandomValues: (bytes: Uint8Array) => {
+        for (let i = 0; i < bytes.length; i++) bytes[i] = (i * 37 + 11) & 255;
+        return bytes;
+      },
+    });
+    const a = await store.add({ name: 'יובל', grade: 5, avatar: '1' });
+    expect(a.id).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/);
+    // The same random bytes again: the new profile still gets an id of its own.
+    const b = await store.add({ name: 'אלון', grade: 4, avatar: '2' });
+    expect(b.id).not.toBe(a.id);
+
+    vi.stubGlobal('crypto', undefined);
+    const c = await store.add({ name: 'נועה', grade: 3, avatar: '3' });
+    const d = await store.add({ name: 'דנה', grade: 6, avatar: '4' });
+    expect(c.id).not.toBe('');
+    expect(new Set([a.id, b.id, c.id, d.id]).size).toBe(4);
+    expect((await store.current())?.id).toBe(d.id);
+  } finally {
+    vi.unstubAllGlobals();
+  }
+});
+
+test('stored entries that are not profiles are skipped', async () => {
+  const storage = new MemoryStorageService();
+  const good = { id: 'ok', name: 'יובל', grade: 5, avatar: '2', createdAt: 1 };
+  await storage.set('profiles', [null, 5, 'text', { id: 'no-name', grade: 4 }, good, { id: 'bad-grade', name: 'x', grade: 9, avatar: '1', createdAt: 2 }]);
+  await storage.set('currentProfile', 'ok');
+  const store = new ProfileStore(storage);
+  expect(await store.list()).toEqual([good]);
+  expect(await store.current()).toEqual(good);
+  await storage.set('currentProfile', 'bad-grade');
+  expect(await store.current()).toBeNull();
 });

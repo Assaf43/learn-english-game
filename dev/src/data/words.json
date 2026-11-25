@@ -1418,7 +1418,8 @@
     "level": 1,
     "trap": "mirror-letter",
     "confusableWith": [
-      "pencil"
+      "pencil",
+      "crayon"
     ]
   },
   {
@@ -1486,7 +1487,8 @@
     "level": 3,
     "trap": "vowel",
     "confusableWith": [
-      "pencil"
+      "pencil",
+      "pen"
     ]
   },
   {
@@ -1613,7 +1615,8 @@
     "level": 1,
     "trap": "vowel",
     "confusableWith": [
-      "canoe"
+      "canoe",
+      "ship"
     ]
   },
   {
@@ -1626,7 +1629,8 @@
     "level": 1,
     "trap": "digraph",
     "confusableWith": [
-      "ferry"
+      "ferry",
+      "boat"
     ]
   },
   {

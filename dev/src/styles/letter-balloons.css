@@ -1,0 +1,223 @@
+/* Letter Balloons */
+
+.lb-panel {
+  display: grid;
+  flex: none;
+  gap: 10px;
+}
+
+/* One slot per letter of the word. Slots shrink so that even 8 letters fit a narrow phone. */
+.lb-slots {
+  --n: 4;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.lb-slot {
+  display: grid;
+  place-items: center;
+  width: min(64px, calc((100% - (var(--n) - 1) * 6px) / var(--n)));
+  aspect-ratio: 1 / 1.1;
+  border-bottom: 5px solid var(--ink);
+  border-radius: 10px 10px 0 0;
+  font-size: clamp(1.5rem, 8vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.lb-slot.is-filled {
+  background: var(--paper);
+}
+
+.lb-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  direction: ltr;
+}
+
+/* The Hebrew translation, shown when the word is complete. */
+.lb-he {
+  flex: 1;
+  min-height: 1.3em;
+  direction: rtl;
+  font-size: clamp(1.4rem, 6vw, 2.2rem);
+  font-weight: 800;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.lb-he.is-shown {
+  opacity: 1;
+}
+
+.lb-bulb {
+  background: var(--paper);
+}
+
+.lb-field {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  border: var(--line);
+  border-radius: 24px;
+  background: linear-gradient(#e9f9fd, #b8e6f2);
+}
+
+/* The button is the tap area, 20% larger than the balloon drawn inside it. */
+.lb-balloon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: start center;
+  width: var(--hit-w);
+  height: var(--hit-h);
+  padding: calc(var(--hit-w) / 12) 0 0;
+  border: 0;
+  background: none;
+  touch-action: none;
+  will-change: transform;
+}
+
+.lb-body {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--balloon-w);
+  height: calc(var(--balloon-w) * 1.12);
+  border: var(--line);
+  border-radius: 50% 50% 50% 50% / 46% 46% 54% 54%;
+  background: var(--balloon);
+  box-shadow: inset -7px -9px 0 rgb(23 50 77 / 12%);
+  pointer-events: none;
+}
+
+/* The knot under the balloon. */
+.lb-body::after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 14px;
+  height: 10px;
+  border: var(--line);
+  border-top: 0;
+  border-radius: 0 0 7px 7px;
+  background: var(--balloon);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.lb-letter {
+  font-size: calc(var(--balloon-w) * 0.52);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.lb-balloon.is-wrong .lb-body {
+  animation: lb-bounce 0.45s;
+}
+
+.lb-balloon.is-glow .lb-body {
+  animation: lb-glow 0.8s ease-in-out infinite alternate;
+}
+
+.lb-balloon.is-popped {
+  pointer-events: none;
+}
+
+.lb-balloon.is-popped .lb-body {
+  animation: lb-pop 0.25s forwards;
+}
+
+.lb-balloon.is-leaving {
+  pointer-events: none;
+}
+
+.lb-balloon.is-leaving .lb-body {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+@keyframes lb-bounce {
+  25% {
+    transform: translateX(-12px) rotate(-9deg);
+  }
+  55% {
+    transform: translateX(10px) rotate(7deg);
+  }
+  80% {
+    transform: translateX(-4px) rotate(-3deg);
+  }
+}
+
+@keyframes lb-glow {
+  from {
+    box-shadow: inset -7px -9px 0 rgb(23 50 77 / 12%), 0 0 0 0 var(--paper);
+  }
+  to {
+    box-shadow: inset -7px -9px 0 rgb(23 50 77 / 12%), 0 0 0 9px var(--paper), 0 0 0 13px var(--ink);
+  }
+}
+
+@keyframes lb-pop {
+  to {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+/* A phone on its side: the strip, the slots and the buttons share one row, and the field takes the rest. */
+@media (orientation: landscape) and (max-height: 520px) {
+  .game.lb {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 8px 12px;
+  }
+
+  .game.lb .progress {
+    display: none;
+  }
+
+  .lb-panel {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .lb-row {
+    min-width: 260px;
+  }
+
+  .lb-slot {
+    width: min(48px, calc((100% - (var(--n) - 1) * 6px) / var(--n)));
+    font-size: 1.6rem;
+  }
+
+  .lb-he {
+    font-size: 1.3rem;
+  }
+
+  .lb-field {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lb-balloon.is-wrong .lb-body,
+  .lb-balloon.is-popped .lb-body {
+    animation: none;
+  }
+
+  .lb-balloon.is-popped .lb-body {
+    opacity: 0;
+  }
+
+  .lb-balloon.is-glow .lb-body {
+    animation: none;
+    box-shadow: inset -7px -9px 0 rgb(23 50 77 / 12%), 0 0 0 9px var(--paper), 0 0 0 13px var(--ink);
+  }
+}

@@ -193,3 +193,37 @@ February 2024 are not used.
 | `public/img/words/ferry.svg` | `svg/emoji_u26f4.svg` |
 | `public/img/words/suitcase.svg` | `svg/emoji_u1f9f3.svg` |
 | `public/img/words/tram.svg` | `svg/emoji_u1f68a.svg` |
+
+## Avatars: Noto Emoji
+
+Same source, commit and licence as the word pictures. Copied without changes and renamed.
+
+| File in this project | Source file |
+|---|---|
+| `public/img/avatars/1.svg` | `svg/emoji_u1f436.svg` |
+| `public/img/avatars/2.svg` | `svg/emoji_u1f431.svg` |
+| `public/img/avatars/3.svg` | `svg/emoji_u1f430.svg` |
+| `public/img/avatars/4.svg` | `svg/emoji_u1f98a.svg` |
+| `public/img/avatars/5.svg` | `svg/emoji_u1f43c.svg` |
+| `public/img/avatars/6.svg` | `svg/emoji_u1f428.svg` |
+| `public/img/avatars/7.svg` | `svg/emoji_u1f42f.svg` |
+| `public/img/avatars/8.svg` | `svg/emoji_u1f435.svg` |
+| `public/img/avatars/9.svg` | `svg/emoji_u1f984.svg` |
+| `public/img/avatars/10.svg` | `svg/emoji_u1f439.svg` |
+| `public/img/avatars/11.svg` | `svg/emoji_u1f437.svg` |
+| `public/img/avatars/12.svg` | `svg/emoji_u1f42e.svg` |
+
+## Original artwork
+
+Made for this project; no outside source.
+
+- The island scene behind the games area: inline SVG in `src/screens/home.ts`.
+- Stars and other shapes in the interface: text characters and CSS in `src/styles/`.
+
+## Fonts
+
+None are shipped. The interface uses fonts already installed on the device (see `--font-he` and `--font-en` in `src/styles/base.css`).
+
+## Audio
+
+No audio files yet. `npm run audio:manifest` lists the files to produce; until they exist the game speaks with the browser's speech synthesis.

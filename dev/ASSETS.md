@@ -222,7 +222,22 @@ Made for this project; no outside source.
 
 ## Fonts
 
-None are shipped. The interface uses fonts already installed on the device (see `--font-he` and `--font-en` in `src/styles/base.css`).
+### Rubik
+
+- Source: Google Fonts, https://fonts.google.com/specimen/Rubik (font project: https://github.com/googlefonts/rubik), version v31 as served on 25 November 2026.
+- Licence: SIL Open Font License, Version 1.1. A copy is in `public/fonts/RUBIK-OFL.txt`.
+- Copyright: 2015 The Rubik Project Authors. The licence names no Reserved Font Name.
+- Changes: none by this project. The files are Google Fonts' own subsets of the variable font (weights 300-900), one per script.
+- Added on the project owner's request, 25 November 2026.
+
+| File in this project | Script | Size | Source file |
+|---|---|---|---|
+| `public/fonts/rubik-hebrew.woff2` | Hebrew | 9 KB | `https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nDrXyi0A.woff2` |
+| `public/fonts/rubik-latin.woff2` | Latin | 35 KB | `https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nBrXw.woff2` |
+
+The files are served by the app itself; nothing is loaded from Google at run time.
+When Rubik cannot load, the interface falls back to fonts already on the device
+(see `--font-he` and `--font-en` in `src/styles/base.css`).
 
 ## Audio
 

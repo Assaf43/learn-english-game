@@ -37,15 +37,39 @@
   direction: ltr;
 }
 
-/* The Hebrew translation, shown when the word is complete. */
-.lb-he {
+/* The picture of the word to spell, between the speaker and the hint button. */
+.lb-picture-box {
+  display: grid;
   flex: 1;
-  min-height: 1.3em;
+  place-items: center;
+  min-width: 0;
+}
+
+.lb-picture {
+  display: block;
+  width: clamp(72px, 12vh, 112px);
+  height: clamp(72px, 12vh, 112px);
+}
+
+/* The Hebrew translation, shown in the middle of the field when the word is complete. */
+.lb-he {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  max-width: 90%;
+  padding: 10px 24px;
+  border: var(--line);
+  border-radius: 22px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
   direction: rtl;
-  font-size: clamp(1.4rem, 6vw, 2.2rem);
+  font-size: clamp(1.6rem, 7vw, 2.6rem);
   font-weight: 800;
   text-align: center;
   opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
   transition: opacity 0.2s;
 }
 

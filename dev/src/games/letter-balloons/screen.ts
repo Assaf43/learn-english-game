@@ -1,6 +1,6 @@
 import type { AppContext, Screen } from '../../app/context';
 import { COPY } from '../../app/copy';
-import { el } from '../../app/dom';
+import { assetUrl, el, preloadImages } from '../../app/dom';
 import { gameBar, onTap, speakerButton, startScreen } from '../../app/game-ui';
 import { defaultDifficulty } from '../../app/router';
 import { ProgressStore, pickRoundWords } from '../../core/progress';
@@ -65,18 +65,23 @@ export function letterBalloonsScreen(ctx: AppContext): Screen {
     });
     const round = new BalloonRound(roundWords.map(w => w.id));
     const shown = (letter: string): string => (cfg.uppercase ? letter.toUpperCase() : letter);
+    preloadImages(roundWords.map(w => assetUrl(w.image)));
 
-    // Screen
+    // Screen. The picture shows which word to spell; the translation appears over the field when the word is done.
     const bar = gameBar(() => ctx.navigate({ name: 'home' }));
     const slots = el('div', { class: 'lb-slots en', dir: 'ltr', lang: 'en' });
+    const picture = el('img', { class: 'lb-picture', alt: '', draggable: 'false' });
     const translation = el('div', { class: 'lb-he', 'aria-live': 'polite' });
     const bulb = el('button', { class: 'icon-btn lb-bulb', type: 'button', 'aria-label': 'hint' });
     bulb.innerHTML = `<span class="icon">${BULB_ICON}</span>`;
-    const field = el('div', { class: 'lb-field' });
+    const field = el('div', { class: 'lb-field' }, translation);
     root.replaceChildren(
       el('div', { class: 'game lb' },
         bar.element,
-        el('div', { class: 'lb-panel' }, slots, el('div', { class: 'lb-row' }, speakerButton(() => say()), translation, bulb)),
+        el('div', { class: 'lb-panel' },
+          slots,
+          el('div', { class: 'lb-row' }, speakerButton(() => say()), el('div', { class: 'lb-picture-box' }, picture), bulb),
+        ),
         field,
       ),
     );
@@ -218,6 +223,7 @@ export function letterBalloonsScreen(ctx: AppContext): Screen {
       guard = new TapGuard();
       const remaining = word.en.slice(attempt.filled().length).split('');
       queue = shuffle([...remaining, ...distractorLetters(word.en, cfg, ctx.rng)], ctx.rng);
+      picture.src = assetUrl(word.image);
       translation.textContent = '';
       translation.classList.remove('is-shown');
       // Retried words come after the last word, so the strip stays at the end for them.

@@ -1,0 +1,105 @@
+/* Parts every game shares: the start screen, the top strip and round icon buttons. */
+
+.start {
+  display: grid;
+  gap: 24px;
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+  text-align: center;
+}
+
+.start .pill span {
+  font-size: 1.3rem;
+}
+
+.btn-start {
+  width: 100%;
+  min-height: 88px;
+  font-size: 1.8rem;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 900px;
+  height: 100vh;
+  height: 100dvh;
+  margin: 0 auto;
+  padding: 12px 16px 16px;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.game-bar {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-btn {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--tap);
+  height: var(--tap);
+  padding: 0;
+  border: var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 4px 0 var(--ink);
+}
+
+.icon-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--ink);
+}
+
+.icon,
+.icon svg {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
+.speaker-btn {
+  background: var(--sun);
+}
+
+.progress {
+  flex: 1;
+  height: 22px;
+  overflow: hidden;
+  border: var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+}
+
+.progress-fill {
+  width: 0;
+  height: 100%;
+  border-inline-end: var(--line);
+  background: var(--leaf);
+  transition: width 0.3s;
+}
+
+.progress-fill[style*="width: 0%"] {
+  border-inline-end: 0;
+}
+
+.progress-text {
+  min-width: 3.2em;
+  font-family: var(--font-en);
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill {
+    transition: none;
+  }
+}

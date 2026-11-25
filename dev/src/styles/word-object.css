@@ -1,0 +1,246 @@
+/* Word and Object */
+
+.wo-stage {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+}
+
+.wo-prompt {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 96px;
+  direction: ltr;
+}
+
+.wo-word {
+  font-size: clamp(2.8rem, 13vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.wo-picture {
+  width: min(38vw, 30vh, 220px);
+  height: min(38vw, 30vh, 220px);
+}
+
+.wo-grid {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: 12px;
+  align-content: center;
+  width: 100%;
+  min-height: 0;
+  margin: 0 auto;
+  direction: ltr;
+}
+
+/* Square pictures: as wide as the screen allows, but never taller than the space left. */
+.wo-grid-pictures {
+  max-width: min(100%, calc((100dvh - 250px) * var(--cols) / var(--rows)));
+}
+
+.wo-grid-words {
+  max-width: 420px;
+}
+
+.wo-option {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: var(--tap);
+  min-height: var(--tap);
+  padding: 8%;
+  border: var(--line);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  touch-action: none;
+  transition: transform 0.2s, opacity 0.3s, background-color 0.2s;
+}
+
+.wo-grid-pictures .wo-option {
+  aspect-ratio: 1;
+}
+
+.wo-option img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.wo-option-word {
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 12px;
+  min-height: 84px;
+  padding: 8px 20px;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/* The English name of a wrong picture, shown once it was tapped. */
+.wo-name {
+  position: absolute;
+  inset-inline: 4px;
+  bottom: 4px;
+  display: none;
+  padding: 2px 4px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: var(--paper);
+  font-size: clamp(0.95rem, 3.6vw, 1.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+/* The picture of a wrong word, shown once it was tapped. */
+.wo-option .wo-hint {
+  display: none;
+  width: 56px;
+  height: 56px;
+}
+
+.wo-option.is-wrong {
+  box-shadow: none;
+  background: var(--faded);
+  animation: wobble 0.45s;
+}
+
+.wo-option.is-wrong .wo-name,
+.wo-option.is-wrong .wo-hint {
+  display: block;
+}
+
+.wo-option.is-dim {
+  opacity: 0.45;
+}
+
+.wo-option.is-correct {
+  z-index: 2;
+  background: var(--leaf);
+  transform: scale(1.12);
+}
+
+.wo-option.is-glow {
+  animation: glow 0.9s ease-in-out infinite alternate;
+}
+
+/* Hard level: pictures float a little (at most 20 px from side to side) and stay tappable. */
+.wo-grid.is-drifting .wo-option:not(.is-correct, .is-wrong) {
+  animation: drift 5s ease-in-out infinite alternate;
+}
+
+.wo-grid.is-drifting .wo-option:nth-child(3n + 1):not(.is-correct, .is-wrong) {
+  animation-duration: 6.5s;
+  animation-direction: alternate-reverse;
+}
+
+.wo-grid.is-drifting .wo-option:nth-child(3n + 2):not(.is-correct, .is-wrong) {
+  animation-name: drift-up;
+  animation-duration: 5.6s;
+}
+
+.wo-grid.is-drifting .wo-option.is-glow:not(.is-correct) {
+  animation: glow 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes wobble {
+  20% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+  80% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: var(--shadow), 0 0 0 0 var(--sun);
+    background: var(--paper);
+  }
+  to {
+    box-shadow: var(--shadow), 0 0 0 10px var(--sun);
+    background: var(--sand);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translate(-10px, -4px);
+  }
+  to {
+    transform: translate(10px, 4px);
+  }
+}
+
+@keyframes drift-up {
+  from {
+    transform: translate(4px, 10px);
+  }
+  to {
+    transform: translate(-4px, -10px);
+  }
+}
+
+/* A phone on its side: the word sits beside the pictures instead of above them. */
+@media (orientation: landscape) and (max-height: 520px) {
+  .wo-stage {
+    flex-direction: row;
+    align-items: center;
+    direction: ltr;
+  }
+
+  .wo-prompt {
+    flex: 0 0 34%;
+    flex-direction: column;
+  }
+
+  .wo-word {
+    font-size: clamp(2rem, 6vw, 3.4rem);
+  }
+
+  .wo-grid-pictures[data-count="9"] {
+    --cols: 5 !important;
+    --rows: 2 !important;
+  }
+
+  .wo-grid-pictures {
+    max-width: min(100%, calc((100dvh - 120px) * var(--cols) / var(--rows)));
+  }
+
+  .wo-grid-words {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: none;
+  }
+
+  .wo-option-word {
+    font-size: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wo-option,
+  .wo-option.is-wrong,
+  .wo-grid.is-drifting .wo-option:not(.is-correct, .is-wrong) {
+    animation: none;
+    transition: none;
+  }
+
+  .wo-option.is-glow {
+    animation: none;
+    background: var(--sand);
+    box-shadow: var(--shadow), 0 0 0 8px var(--sun);
+  }
+}

@@ -1,4 +1,6 @@
 import './styles/base.css';
+import './styles/game.css';
+import './styles/word-object.css';
 import type { AppContext, Screen } from './app/context';
 import { COPY } from './app/copy';
 import { el } from './app/dom';
@@ -8,6 +10,7 @@ import { ProfileStore } from './core/profiles';
 import { mulberry32 } from './core/rng';
 import { LocalStorageService } from './core/storage';
 import type { GameId } from './core/types';
+import { wordObjectScreen } from './games/word-object/screen';
 import { homeScreen } from './screens/home';
 import { summaryScreen } from './screens/summary';
 import { whoScreen } from './screens/who';
@@ -36,7 +39,7 @@ function screenFor(route: Route, ctx: AppContext): Screen {
     case 'home':
       return homeScreen(ctx);
     case 'game':
-      return gameNotReadyScreen(ctx, route.game);
+      return route.game === 'word-object' ? wordObjectScreen(ctx) : gameNotReadyScreen(ctx, route.game);
     case 'summary':
       return summaryScreen(ctx, route.result);
   }

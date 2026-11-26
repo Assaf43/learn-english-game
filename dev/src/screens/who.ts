@@ -7,7 +7,7 @@ import type { Grade, Profile } from '../core/types';
 const GRADES: readonly Grade[] = [3, 4, 5, 6];
 const MAX_NAME_LENGTH = 20;
 
-/** "מי משחק?": pick an existing player or add a new one. */
+/** Who is playing: pick an existing player or add a new one. */
 export function whoScreen(ctx: AppContext): Screen {
   let root: HTMLElement | null = null;
 

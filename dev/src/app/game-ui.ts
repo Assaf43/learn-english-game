@@ -57,7 +57,7 @@ export function choicePills<T extends string>(o: {
 
 /**
  * A game's first screen: its name, the difficulty choice, anything extra the
- * game adds, and "התחל". The start button listens for `click`, because browsers
+ * game adds, and the start button. It listens for `click`, because browsers
  * only let sound start from a completed tap.
  */
 export function startScreen(o: {

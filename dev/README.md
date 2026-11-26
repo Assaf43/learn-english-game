@@ -112,7 +112,7 @@ To open the app on a phone that is on the same Wi-Fi as the computer, start it w
 `http://192.168.1.20:5173`) in the phone's browser. Data saved there belongs to that
 address only.
 
-- Sound starts after tapping "התחל", and the speaker and turtle buttons replay it.
+- Sound starts after tapping "מתחילים!", and the speaker and turtle buttons replay it.
   Listen for this on the iPhone or iPad in particular: with no audio files yet, the
   sound there depends on Safari allowing the browser voice.
 - Nothing is cut off or needs sideways scrolling on a narrow phone.

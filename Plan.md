@@ -19,7 +19,7 @@
 - After 2 wrong answers on the same item, the correct answer glows.
 - Stars are never deducted. A finished round always gives at least 1 star.
 - No game code touches `localStorage` directly; only `LocalStorageService` does.
-- Audio starts only after a user tap. Every round begins with a "התחל" button that calls `audio.unlock()`.
+- Audio starts only after a user tap. Every round begins with a "מתחילים!" button that calls `audio.unlock()`.
 - Must work with touch and mouse, from a 360 px wide phone to desktop. Tap targets are at least 72 px.
 - Use `pointerdown`, not `click`, for in-game taps.
 - All randomness goes through an injected `Rng` so tests are deterministic.
@@ -34,21 +34,23 @@
 
 ## Hebrew interface copy
 
+Updated 26 November 2026 at the owner's request: text that addressed the player in the masculine was replaced with wording that suits girls and boys alike (whoTitle, newPlayer, start, the Listen and Catch name, playAgain, knownWords). New text should avoid gendered verb forms.
+
 | Key | Text |
 |---|---|
-| whoTitle | מי משחק? |
-| newPlayer | שחקן חדש |
+| whoTitle | מי משחק/ת? |
+| newPlayer | פרופיל חדש |
 | name / grade | שם / כיתה |
 | grades | ג' ד' ה' ו' |
-| start | התחל |
-| games | בלוני אותיות / הקשב ותפוס / מילה ואובייקט |
+| start | מתחילים! |
+| games | בלוני אותיות / מקשיבים ותופסים / מילה ואובייקט |
 | difficulty | קל / בינוני / קשה |
 | modeWordToPicture / modePictureToWord | מילה ← תמונה / תמונה ← מילה |
 | summaryTitle | כל הכבוד! |
 | practiseWords | מילים לתרגול |
-| playAgain / backHome | שחק שוב / חזרה לאזור המשחקים |
+| playAgain / backHome | עוד סבב / חזרה לאזור המשחקים |
 | areaEnglish / areaMath | אנגלית / חשבון |
-| knownWords | מילים שאני יודע |
+| knownWords | מילים שלמדתי |
 
 ## Review Focus
 
@@ -76,7 +78,7 @@ src/core/round.ts                  RoundTracker
 src/core/stars.ts                  starsFromRatio, StarStore
 src/core/audio.ts                  AudioPlayer, FileAudioPlayer
 src/data/words.json                the word bank
-src/screens/who.ts                 "מי משחק?"
+src/screens/who.ts                 "מי משחק/ת?"
 src/screens/home.ts                games area
 src/screens/summary.ts             end of round
 src/games/word-object/logic.ts     item building
@@ -477,10 +479,10 @@ export async function finishRound(ctx: AppContext, profileId: string, result: Ro
 
 **Behaviour:**
 - Start: no current profile goes to `who`; otherwise `home`.
-- `who`: avatar tiles for existing profiles plus a "שחקן חדש" tile opening a form (name, grade ג'-ו', 12 avatars). Avatars are 12 Noto animal faces, recorded in `ASSETS.md`.
+- `who`: avatar tiles for existing profiles plus a "פרופיל חדש" tile opening a form (name, grade ג'-ו', 12 avatars). Avatars are 12 Noto animal faces, recorded in `ASSETS.md`.
 - `home`: header with avatar, name, grade, total stars, known-words count; tapping the avatar goes to `who`. Area "אנגלית" with three cards (title and that game's stars). Area "חשבון" with one card only if `import.meta.env.VITE_MATH_GAME_URL` is set. Static illustrated background (a simple CSS/SVG island; no animation). A reserved empty slot in the header for the Step 2 coupons button.
-- Each game's own start screen (Tasks 9-11) shows the difficulty selector and "התחל". The last difficulty per game is stored in `settings.<profileId>`; the first default comes from `defaultDifficulty`.
-- `summary`: stars, "מילים לתרגול" (each word with `firstTry === false`: picture, English, Hebrew, tap to hear), buttons "שחק שוב" and "חזרה לאזור המשחקים".
+- Each game's own start screen (Tasks 9-11) shows the difficulty selector and "מתחילים!". The last difficulty per game is stored in `settings.<profileId>`; the first default comes from `defaultDifficulty`.
+- `summary`: stars, "מילים לתרגול" (each word with `firstTry === false`: picture, English, Hebrew, tap to hear), buttons "עוד סבב" and "חזרה לאזור המשחקים".
 - Navigating always calls the previous screen's `unmount()`.
 
 - [ ] **Step 1:** Write failing tests:
@@ -679,7 +681,7 @@ test('nextSpawn returns the needed letter when it is off screen', () => {
 **Files:** Create `README.md`; Modify styles as needed
 
 - [ ] **Step 1:** Run `npm test`, `npm run typecheck`, `npm run build`; all pass.
-- [ ] **Step 2:** Play one full round of each game at each difficulty in Chrome desktop, on an Android phone and on an iPhone or iPad (Safari). Check: audio starts after "התחל", nothing overflows at 360 px, rotation keeps the game playable, reload keeps profile, stars and progress.
+- [ ] **Step 2:** Play one full round of each game at each difficulty in Chrome desktop, on an Android phone and on an iPhone or iPad (Safari). Check: audio starts after "מתחילים!", nothing overflows at 360 px, rotation keeps the game playable, reload keeps profile, stars and progress.
 - [ ] **Step 3:** Fix what the check finds; add a test for any logic bug.
 - [ ] **Step 4:** Write `README.md`: how to run, test, build; how to produce audio files from `audio-manifest.json` into `public/audio/`; the `VITE_MATH_GAME_URL` option; what Step 2 will replace (`LocalStorageService`).
 - [ ] **Step 5:** Commit: `docs: readme and device fixes`.

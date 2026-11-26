@@ -1,10 +1,10 @@
 /**
  * Hebrew interface text.
  *
- * The wording started from the table in Plan.md. On 26 November 2026 the owner
- * asked for text that suits girls and boys alike, so the lines that addressed
- * the player in the masculine were reworded here; Plan.md still shows the
- * original wording. Keep new text free of gendered verb forms.
+ * The wording matches the table in Plan.md. On 26 November 2026 the owner asked
+ * for text that suits girls and boys alike, so the lines that addressed the
+ * player in the masculine were reworded here and in Plan.md. Keep new text free
+ * of gendered verb forms, and change Plan.md together with this file.
  */
 export const COPY = {
   whoTitle: 'מי משחק/ת?',

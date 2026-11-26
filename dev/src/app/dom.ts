@@ -19,10 +19,20 @@ export function el<K extends keyof HTMLElementTagNameMap>(
   return node;
 }
 
-/** The URL of a file in `public/`, for example `assetUrl('img/words/cat.svg')`. */
+/**
+ * The full URL of `path` under the app's base, worked out from the page address.
+ * The published site is built with a relative base (`./`). A relative address
+ * given to CSS (a mask image, a custom property) is looked up next to the
+ * stylesheet in `assets/`, not next to the page, so asset addresses are always
+ * made absolute here.
+ */
+export function resolveAssetUrl(path: string, base: string, pageUrl: string): string {
+  return new URL(`${base.endsWith('/') ? base : `${base}/`}${path}`, pageUrl).href;
+}
+
+/** The URL of a file in `public/`, for example `assetUrl('img/words/cat.svg')`. Always a full URL. */
 export function assetUrl(path: string): string {
-  const base = import.meta.env.BASE_URL ?? '/';
-  return `${base.endsWith('/') ? base : `${base}/`}${path}`;
+  return resolveAssetUrl(path, import.meta.env.BASE_URL ?? '/', document.baseURI);
 }
 
 /** Avatar ids a player can choose from; each has a picture in `public/img/avatars/`. */
